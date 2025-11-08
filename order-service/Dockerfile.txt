@@ -1,0 +1,10 @@
+# Use a base image with Java installed
+FROM techiescamp/jre-17:1.0.0
+# Set the working directory inside the container
+WORKDIR /app
+# Copy the JAR file into the container
+COPY target/order-service-0.0.1-SNAPSHOT.jar /app/order_service.jar
+# Expose any required ports (optional)
+EXPOSE 8080
+# Command to run the JAR file
+CMD ["java", "-jar", "/app/order_service.jar"]
